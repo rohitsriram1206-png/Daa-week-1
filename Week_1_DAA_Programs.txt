@@ -1,0 +1,149 @@
+DAA LAB — WEEK 1
+Programs 1–5
+Source: extracted from your uploaded DAA lab PDF.
+
+
+========================================================================
+PROGRAM 1: Counter method: triangular loop
+========================================================================
+
+#include<stdio.h> 
+int sum(int n) 
+{ 
+int i= 0; 
+   int s =0; 
+   while(s <= n) 
+   { 
+        i++; 
+        s += i; 
+    } 
+return i*3; 
+} 
+int main()
+{
+
+int n;
+scanf("%d",&n);
+printf("%d",sum(n));
+}
+
+
+========================================================================
+PROGRAM 2: Counter method: nested loops with break
+========================================================================
+
+#include<stdio.h> 
+void func(int n) 
+{ 
+   if(n==1) 
+   { 
+     //printf("*"); 
+   } 
+   else 
+   { 
+    for(int i=1; i<=n; i++) 
+    { 
+      for(int j=1; j<=n; j++) 
+      { 
+         //printf("*"); 
+         //printf("*"); 
+         break; 
+
+      } 
+    } 
+  }  
+  printf("%d",(5*n+2)); 
+} 
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    func(n);
+}
+
+
+========================================================================
+PROGRAM 3: Counter method: factor of a number
+========================================================================
+
+#include <stdio.h> 
+int main()
+{
+   int n, i, counter = 0;
+   scanf("%d", &n);
+   counter++;
+   for (i = 1; i <= n; ++i)
+   {
+       counter++;
+       if (n % i == 0)
+       {
+           counter++;
+       }
+
+       counter++;
+   }
+   printf("%d", counter);
+   return 0;
+}
+
+
+========================================================================
+PROGRAM 4: Counter method: three nested loops
+========================================================================
+
+#include <stdio.h> 
+int main()
+{
+   int n;
+   int c = 0;
+   int i, j, k;
+   scanf("%d", &n);
+   c++;
+   for (i = n / 2; i < n; i++)
+
+   {
+       c++;
+       for (j = 1; j < n; j = 2 * j)
+       {
+           c++;
+           for (k = 1; k < n; k = k * 2)
+           {
+               c++;
+               c++;
+           }
+           c++;
+       }
+       c++;
+   }
+   c++;
+   printf("%d", c);
+   return 0;
+}
+
+
+========================================================================
+PROGRAM 5: Counter method: reverse a number
+========================================================================
+
+#include <stdio.h> 
+int main()
+
+{
+   int n;
+   int rev = 0, remainder;
+   int count = 0;
+   scanf("%d", &n);
+   count += 3;
+   while (n != 0)
+   {
+       count++;
+       remainder = n % 10;
+       count++;
+       rev = rev * 10 + remainder;
+       count++;
+       n /= 10;
+       count++;
+   }
+   printf("%d", count);
+   return 0;
+}
